@@ -7,15 +7,11 @@ Distributed under the terms of the GPL v2.0
 
 package net.kevinboone.apacheintegration.amqutil;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 /**
  * Main class for the amqutil application.
  */
 public class App {
-
-    private static final Logger log = LogManager.getLogger(App.class);
 
     /**
      * Start here!
@@ -26,8 +22,6 @@ public class App {
             Usage.showBriefUsage(System.err);
             System.exit(-1);
         }
-
-
 
         int ret = 0; // OS return code
 
@@ -45,15 +39,15 @@ public class App {
                 // Run the command, instrumented with logging and timing if specified
                 ret = cmd.doRun();
             } catch (ArgParseException e) {
-                log.error("Error parsing arguments for \"" + args[0] + "\" command: " + e.getMessage());
+                System.err.println("ERROR: Error parsing arguments for \"" + args[0] + "\" command: " + e.getMessage());
             } catch (BadTypeException e) {
-                log.error("Unknown message type \"" + e.getMessage() + "\"");
+                System.err.println("ERROR: Unknown message type \"" + e.getMessage() + "\"");
             } catch (Exception e) {
-                log.error(e.getMessage());
+                System.err.println("ERROR: " + e.getMessage());
                 System.exit(-1);
             }
         } else {
-            log.error("Unknown command \"" + args[0] + "\"");
+            System.err.println("ERROR: Unknown command \"" + args[0] + "\"");
         }
 
         System.exit(ret);

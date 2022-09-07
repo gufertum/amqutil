@@ -7,9 +7,6 @@ Distributed under the terms of the GPL v2.0
 
 package net.kevinboone.apacheintegration.amqutil;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.QueueBrowser;
@@ -21,7 +18,6 @@ import java.util.Enumeration;
  */
 public class CmdShow extends Cmd {
     
-    private static final Logger log = LogManager.getLogger(CmdShow.class);
 
     @Override
     public String getName() {
@@ -108,7 +104,7 @@ public class CmdShow extends Cmd {
         }
 
         if (!gotOne)
-            log.error("No message with index " + n);
+            System.err.println("ERROR: No message with index " + n);
 
         qb.close();
 

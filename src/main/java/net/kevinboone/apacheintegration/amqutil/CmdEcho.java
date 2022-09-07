@@ -7,9 +7,6 @@ Distributed under the terms of the GPL v2.0
 
 package net.kevinboone.apacheintegration.amqutil;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import javax.jms.*;
 
 
@@ -18,8 +15,6 @@ import javax.jms.*;
  */
 public class CmdEcho extends Cmd {
 
-    private static final Logger log = LogManager.getLogger(CmdEcho.class);
-    
     @Override
     public String getName() {
         return "echo";
@@ -105,7 +100,7 @@ public class CmdEcho extends Cmd {
                 producer.send(message);
                 producer.close();
             } else {
-                log.warn("Message has no reply-to address");
+                System.out.println("WARNING: Message has no reply-to address");
             }
         }
     }

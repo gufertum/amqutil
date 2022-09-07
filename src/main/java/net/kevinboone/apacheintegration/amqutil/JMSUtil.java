@@ -8,8 +8,6 @@ Distributed under the terms of the GPL v2.0
 package net.kevinboone.apacheintegration.amqutil;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.jms.*;
 import java.io.File;
@@ -19,8 +17,6 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class JMSUtil {
-    
-    private static final Logger log = LogManager.getLogger(JMSUtil.class);
     
     /**
      * getJMSType returns a textual type name for a message of a specific class
@@ -50,7 +46,7 @@ public class JMSUtil {
                 String value = token[1];
                 m.setStringProperty(key, value);
             } else {
-                log.error("Invalid property spec \"" + prop + "\"");
+                System.err.println("ERROR: Invalid property spec \"" + prop + "\"");
             }
         }
     }
@@ -59,8 +55,7 @@ public class JMSUtil {
             throws JMSException, IOException {
         if (format.equals("short") || format.equals("long")
                 || format.equals("text")) {
-            System.out.printf("%s %s\n", message.getJMSMessageID(),
-                    JMSUtil.getJMSType(message));
+            System.out.printf("%s %s\n", message.getJMSMessageID(), JMSUtil.getJMSType(message));
         }
         if (format.equals("long") || format.equals("text")) {
             System.out.println(message);

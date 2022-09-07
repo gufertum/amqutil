@@ -7,15 +7,11 @@ Distributed under the terms of the GPL v2.0
 
 package net.kevinboone.apacheintegration.amqutil;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 /**
  * Implementation of the "help" command
  */
 public class CmdHelp extends Cmd {
 
-    private static final Logger log = LogManager.getLogger(CmdHelp.class);
 
     @Override
     public String getName() {
@@ -48,7 +44,7 @@ public class CmdHelp extends Cmd {
                 cmd.setupOptions();
                 cmd.briefHelp(System.out);
             } else
-                log.error("Can't find command \"" + nonSwitchArgs[0] + "\"");
+                System.err.println("ERROR: Can't find command \"" + nonSwitchArgs[0] + "\"");
         }
         return 0;
     }

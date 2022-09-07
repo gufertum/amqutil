@@ -9,8 +9,6 @@ package net.kevinboone.apacheintegration.amqutil;
 
 import org.apache.commons.cli.*;
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 
 import javax.jms.ConnectionFactory;
@@ -23,8 +21,6 @@ import java.nio.charset.StandardCharsets;
  * Base class extended by all amqutil command-line commands
  */
 public abstract class Cmd {
-
-    private static final Logger log = LogManager.getLogger(Cmd.class);
 
     protected Options options = null;
     protected CommandLine cl = null;
@@ -126,7 +122,7 @@ public abstract class Cmd {
         if (url != null && url.length() != 0) {
             factory = new org.apache.qpid.jms.JmsConnectionFactory(url);
             if (!host.equals("localhost") || port != 61616) {
-                log.warn("Ignoring host/port arguments as a URL was specified");
+                System.out.println("WARNING: Ignoring host/port arguments as a URL was specified");
             }
         } else {
             factory = new org.apache.qpid.jms.JmsConnectionFactory
@@ -144,7 +140,7 @@ public abstract class Cmd {
         if (url != null && url.length() != 0) {
             factory = new org.apache.activemq.ActiveMQConnectionFactory(url);
             if (!host.equals("localhost") || port != 61616) {
-                log.warn("Ignoring host/port arguments as a URL was specified");
+                System.out.println("WARNING: Ignoring host/port arguments as a URL was specified");
             }
         } else {
             factory = new org.apache.activemq.ActiveMQConnectionFactory("tcp://" + host + ":" + port);
@@ -162,7 +158,7 @@ public abstract class Cmd {
             factory =
                     new org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory(url);
             if (!host.equals("localhost") || port != 61616) {
-                log.warn("Ignoring host/port arguments as a URL was specified");
+                System.out.println("WARNING: Ignoring host/port arguments as a URL was specified");
             }
         } else {
             factory = new org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory("tcp://" + host + ":" + port);
