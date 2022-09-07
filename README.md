@@ -1,6 +1,6 @@
 <h1>amqutil</h1>
 
-Version 0.1.4<p/>
+Version 0.1.5<p/>
 
 A simple test/benchmark utility for Apache message brokers.
 
@@ -460,7 +460,7 @@ When producing a message to a destination, if no message file
 (<code>--file</code>) is
 provided, then a string of 500 arbitrary characters will be produced,
 or of length set by the <code>--length</code> switch.
-</p>
+<p/>
 If a file is specified when consuming messages, then messages will be appended
 to that file, provided they are text messages. Any non-text messages are
 silently ignored
@@ -539,7 +539,7 @@ At present, <code>amqutil</code> is Enlish-language only.
 <table cellpadding="5" cellspacing="5">
 <tr>
 <td valign="top">
-0.1.4,&nbsp;February&nbsp;2020
+0.1.5,&nbsp;September&nbsp;2022
 </td>
 <td valign="top">
 Added Artemis support. Fixed broken manual command.

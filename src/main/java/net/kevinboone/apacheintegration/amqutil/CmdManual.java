@@ -6,39 +6,44 @@ Distributed under the terms of the GPL v2.0
 ==========================================================================*/
 
 package net.kevinboone.apacheintegration.amqutil;
-import java.io.*;
-import java.net.*;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
 
 /**
- * Implementation of the "manual" command 
+ * Implementation of the "manual" command
  */
-public class CmdManual extends Cmd
-{
-  @Override 
-  public String getName () { return "manual"; }
+public class CmdManual extends Cmd {
+    @Override
+    public String getName() {
+        return "manual";
+    }
 
-  @Override 
-  public String getShortUsage () { return "amqutil manual {options}"; }
+    @Override
+    public String getShortUsage() {
+        return "amqutil manual {options}";
+    }
 
-  @Override 
-  public String getShortDescription () 
-    { return "Displays the manual"; }
+    @Override
+    public String getShortDescription() {
+        return "Displays the manual";
+    }
 
 
-  @Override 
-  public int run() throws Exception
-    {
-    URL url = ClassLoader.getSystemClassLoader().getResource ("manual.txt");
-    InputStream is = url.openStream();
-    BufferedReader br = new BufferedReader (new InputStreamReader (is)); 
-    String line;
-    while ((line = br.readLine()) != null)
-      {
-      System.out.println (line);
-      }
-    br.close();
-    is.close();
-    return 0;
+    @Override
+    public int run() throws Exception {
+        URL url = ClassLoader.getSystemClassLoader().getResource("manual.txt");
+        InputStream is = url.openStream();
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String line;
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+        br.close();
+        is.close();
+        return 0;
     }
 
 }
