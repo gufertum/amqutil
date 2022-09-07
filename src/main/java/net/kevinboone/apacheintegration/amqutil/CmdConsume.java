@@ -175,26 +175,18 @@ public class CmdConsume extends Cmd {
     public void setupOptions() {
         super.setupOptions();
         options.addOption("b", "batch", true, "set batch size");
-        options.addOption(null, "format", true,
-                "display format: none|short|long|text|textonly");
-        options.addOption(null, "delay", true,
-                "delay (seconds) after receiving each message");
-        options.addOption(null, "client-ack", false,
-                "use client acknowledgment");
-        options.addOption("d", "destination", true,
-                "destination (queue or topic) name");
-        options.addOption("i", "file", true,
-                "output message to text file");
+        options.addOption(null, "format", true, "display format: none|short|long|text|textonly");
+        options.addOption(null, "delay", true, "delay (seconds) after receiving each message");
+        options.addOption(null, "client-ack", false, "use client acknowledgment");
+        options.addOption("d", "destination", true, "destination (queue or topic) name");
+        options.addOption("i", "file", true, "output message to text file");
         options.addOption(null, "host", true, "set server hostname");
-        options.addOption(null, "percent", false,
-                "show progress percentage");
+        options.addOption(null, "percent", false, "show progress percentage");
         options.addOption(null, "linger", true, "delay (ms) between consume and commit in batch mode");
         options.addOption("p", "password", true, "broker password for connection");
         options.addOption(null, "port", true, "set server port");
-        options.addOption(null, "selector", true,
-                "message selector expression");
-        options.addOption(null, "sleep", true,
-                "sleep for the specified number of milliseconds between each message");
+        options.addOption(null, "selector", true, "message selector expression");
+        options.addOption(null, "sleep", true, "sleep for the specified number of milliseconds between each message");
         options.addOption("u", "user", true, "broker username for connection");
         options.addOption(null, "url", true, "broker connection url");
     }

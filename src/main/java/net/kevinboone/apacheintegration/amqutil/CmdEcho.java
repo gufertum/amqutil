@@ -113,15 +113,12 @@ public class CmdEcho extends Cmd {
     @Override
     public void setupOptions() {
         super.setupOptions();
-        options.addOption(null, "format", true,
-                "display format: none|short|long|text|textonly");
-        options.addOption("d", "destination", true,
-                "destination (queue or topic) name");
+        options.addOption(null, "format", true, "display format: none|short|long|text|textonly");
+        options.addOption("d", "destination", true, "destination (queue or topic) name");
         options.addOption(null, "host", true, "set server hostname");
         options.addOption("p", "password", true, "broker password for connection");
         options.addOption(null, "port", true, "set server port");
-        options.addOption(null, "sleep", true,
-                "sleep for the specified number of milliseconds between each message");
+        options.addOption(null, "sleep", true, "sleep for the specified number of milliseconds between each message");
         options.addOption("u", "user", true, "broker username for connection");
         options.addOption(null, "url", true, "broker connection url");
         options.addOption(null, "properties", true, "add header properties");

@@ -120,17 +120,14 @@ public class CmdShow extends Cmd {
     @Override
     public void setupOptions() {
         super.setupOptions();
-        options.addOption(null, "format", true,
-                "display format: none|short|long|text|textonly");
-        options.addOption("d", "destination", true,
-                "destination (queue or topic) name");
+        options.addOption(null, "format", true, "display format: none|short|long|text|textonly");
+        options.addOption("d", "destination", true, "destination (queue or topic) name");
         options.addOption(null, "host", true, "set server hostname");
         options.addOption("p", "password", true, "broker password for connection");
         options.addOption(null, "port", true, "set server port");
         options.addOption("u", "user", true, "broker username for connection");
         options.addOption(null, "url", true, "broker connection url");
-        options.addOption("i", "file", true,
-                "output message to text file");
+        options.addOption("i", "file", true, "output message to text file");
     }
 
 }

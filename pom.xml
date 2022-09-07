@@ -9,9 +9,10 @@
     <name>amqutil</name>
 
     <properties>
-        <activemq.version>5.11.0</activemq.version>
-        <qpid.version>0.55.0</qpid.version>
-        <artemis.version>2.11.0</artemis.version>
+        <activemq.version>5.17.2</activemq.version>
+        <qpid.version>1.6.0</qpid.version>
+        <artemis.version>2.24.0</artemis.version>
+
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -19,33 +20,35 @@
     <url>http://maven.apache.org</url>
 
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.activemq/activemq-client -->
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <!-- activemq-all gets a load of other stuff we need, like
-                 log4j. However, ideally it would be better if that were
-             specified separately -->
-            <artifactId>activemq-all</artifactId>
+            <artifactId>activemq-client</artifactId>
             <version>${activemq.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.qpid</groupId>
             <artifactId>qpid-jms-client</artifactId>
             <version>${qpid.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.activemq</groupId>
-            <artifactId>artemis-jms-client-all</artifactId>
+            <artifactId>artemis-jms-client</artifactId>
             <version>${artemis.version}</version>
         </dependency>
+
         <dependency>
             <groupId>commons-cli</groupId>
             <artifactId>commons-cli</artifactId>
-            <version>1.2</version>
+            <version>1.5.0</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.4</version>
+            <version>2.11.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->

@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class JMSUtil {
     
@@ -83,8 +84,7 @@ public class JMSUtil {
         }
         if (!file.equals("")) {
             if (message instanceof TextMessage) {
-                FileUtils.writeStringToFile(new File(file),
-                        ((TextMessage) message).getText(), true);
+                FileUtils.writeStringToFile(new File(file), ((TextMessage) message).getText(), StandardCharsets.UTF_8, true);
             } else if (message instanceof BytesMessage) {
                 BytesMessage bm = (BytesMessage) message;
                 long l = bm.getBodyLength();

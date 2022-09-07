@@ -37,12 +37,9 @@ public class CmdHelp extends Cmd {
     public int run() throws Exception {
         String[] nonSwitchArgs = cl.getArgs();
         if (nonSwitchArgs.length == 0) {
-            System.out.println
-                    ("Show information for a command: amqutil help {command}");
-            System.out.println
-                    ("List all commands: amqutil commands");
-            System.out.println
-                    ("Display the manual: amqutil manual");
+            System.out.println("Show information for a command: amqutil help {command}");
+            System.out.println("List all commands: amqutil commands");
+            System.out.println("Display the manual: amqutil manual");
         } else {
             Cmd cmd = ListOfCommands.findCmd(nonSwitchArgs[0]);
             if (cmd != null) {

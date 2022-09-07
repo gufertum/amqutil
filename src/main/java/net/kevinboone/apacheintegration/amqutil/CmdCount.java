@@ -92,8 +92,7 @@ public class CmdCount extends Cmd {
     @Override
     public void setupOptions() {
         super.setupOptions();
-        options.addOption("d", "destination", true,
-                "destination (queue or topic) name");
+        options.addOption("d", "destination", true, "destination (queue or topic) name");
         options.addOption(null, "host", true, "set server hostname");
         options.addOption("p", "password", true, "broker password for connection");
         options.addOption(null, "port", true, "set server port");

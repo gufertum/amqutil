@@ -161,27 +161,20 @@ public class CmdSubscribe extends Cmd {
     @Override
     public void setupOptions() {
         super.setupOptions();
-        options.addOption("d", "destination", true,
-                "destination (queue or topic) name");
+        options.addOption("d", "destination", true, "destination (queue or topic) name");
         options.addOption(null, "host", true, "set server hostname");
         options.addOption("p", "password", true, "broker password for connection");
         options.addOption(null, "port", true, "set server port");
         options.addOption("u", "user", true, "broker username for connection");
         options.addOption(null, "url", true, "broker connection url");
-        options.addOption(null, "sleep", true,
-                "sleep for the specified number of milliseconds between each message");
-        options.addOption(null, "percent", false,
-                "show progress percentage");
+        options.addOption(null, "sleep", true, "sleep for the specified number of milliseconds between each message");
+        options.addOption(null, "percent", false, "show progress percentage");
         options.addOption("b", "batch", true, "set batch size");
-        options.addOption(null, "length", true,
-                "length of internally-generated message, in characters (default 500)");
+        options.addOption(null, "length", true, "length of internally-generated message, in characters (default 500)");
         options.addOption(null, "properties", true, "add header properties");
-        options.addOption(null, "durable", true,
-                "enable durable subscription with specified client ID");
-        options.addOption(null, "format", true,
-                "display format: none|short|long|text|textonly");
-        options.addOption(null, "selector", true,
-                "message selector expression");
+        options.addOption(null, "durable", true, "enable durable subscription with specified client ID");
+        options.addOption(null, "format", true, "display format: none|short|long|text|textonly");
+        options.addOption(null, "selector", true, "message selector expression");
     }
 
 }
